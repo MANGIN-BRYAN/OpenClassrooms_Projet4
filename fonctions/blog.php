@@ -35,6 +35,29 @@ function formattage_date($publication) {
     return $resultat;
 }
 
+function nb_commentaires() {
+    global $bdd;
+    
+    $id_article = (int)$_GET["id"];
+    
+    $nb_commentaires = $bdd->prepare("SELECT COUNT(*) FROM commentaires WHERE id_article = ?");
+    $nb_commentaires->execute([$id_article]);
+    $nb_commentaires = $nb_commentaires->fetch()[0];
+    
+    return $nb_commentaires;
+}
+
+function commentaires() {
+    global $bdd;
+    
+    $id_article = (int)$_GET["id"];
+    
+    $commentaires = $bdd->prepare("SELECT commentaires.*, membres.pseudo FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id AND commentaires.id_article = ?");
+    $commentaires->execute([$id_article]);
+    $commentaires = $commentaires->fetchAll();
+    
+    return $commentaires;
+}
 
 
 
