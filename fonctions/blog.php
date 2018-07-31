@@ -58,22 +58,3 @@ function commentaires() {
     
     return $commentaires;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
