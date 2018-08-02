@@ -31,7 +31,29 @@ $bdd = bdd();
             </div>
         </div>
         <form method="post" action="">
-          
+            <?php
+            if(isset($erreurs)) :
+            if($erreurs) :
+            foreach($erreurs as $erreur) :
+            ?>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="message erreur"><?= $erreur ?></div>
+                </div>
+            </div>
+            <?php
+            endforeach;
+            else :
+            ?>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="message confirmation">Votre inscription a bien été prise en compte !</div>
+                </div>
+            </div>
+            <?php
+            endif;
+            endif;
+            ?>
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
                     <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST["pseudo"])) echo $_POST["pseudo"] ?>">
