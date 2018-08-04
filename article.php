@@ -19,11 +19,18 @@ $commentaires = commentaires();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Billet simple pour l'Alaska - Article</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,300,700">
-    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <?php include "header.php" ?>
+ 
+          <!--==========================
+    Section home
+  ============================-->
+<section id="home">
+  <div class="home-container article-container">
     <div class="container article">
         <div class="row">
             <form method="post" action="index.php">
@@ -51,7 +58,7 @@ $commentaires = commentaires();
     <div class="container commentaires">
         <div class="row">
             <div class="col-xs-12">
-                <h1>Commentaires (<?= $nb_commentaires ?>)</h1>
+                <h3>Commentaires (<?= $nb_commentaires ?>)</h3>
             </div>
         </div>
         <?php
@@ -99,13 +106,12 @@ $commentaires = commentaires();
         <?php
         endif;
         ?>
-        <footer>
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - <a href="https://www.facebook.com/infoprog.tuto">Facebook</a>
-                </div>
-            </div>
-        </footer>
     </div>
+</div>
+  </section><!-- #home -->
+
+    <?php include "footer.php" ?>
+
+
 </body>
 </html>
