@@ -19,23 +19,27 @@ $bdd = bdd();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Billet simple pour l'Alaska - Connexion</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,300,700">
-    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <?php include "header.php" ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-offset-3">
-                <h1>Connectez-vous !</h1>
-            </div>
-        </div>
-        <form method="post" action="">
+   
+      <!--==========================
+  Hero Section
+============================-->
+  <section id="home">
+    <div class="home-container">
+      <div class="row">
+        <h3>Se connecter !</h3>
+    </div>
+        <form method="post" action="" class="col-sm-6 col-xs-12">
             <?php
             if(isset($erreur)) :
             ?>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-12">
                     <div class="message erreur"><?= $erreur ?></div>
                 </div>
             </div>
@@ -43,28 +47,22 @@ $bdd = bdd();
             endif;
             ?>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST["pseudo"])) echo $_POST["pseudo"] ?>">
-                </div>
+                <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST["pseudo"])) echo $_POST["pseudo"] ?>">
             </div>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="password" name="password" placeholder="Mot de passe *">
-                </div>
+                <input type="password" name="password" placeholder="Mot de passe *">
             </div>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="submit" value="Me connecter!">
-                </div>
+                <input type="submit" class="button pressed" value="Me connecter!">
             </div>
-        </form>
-        <footer>
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - <a href="https://www.facebook.com/infoprog.tuto">Facebook</a>
-                </div>
-            </div>
-        </footer>
     </div>
+  </section><!-- #hero -->
+    <?php include "footer.php" ?>
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <script type="text/javascript">
+        jQuery(document).ready(function( $ ) {
+            jQuery(".login").addClass('menu-active');
+        });
+    </script>
 </body>
 </html>
